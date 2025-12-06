@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Electric Bill Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><i class="bi bi-lightning-charge"></i> Electric Bill Calculator</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="calculator.html">CALCULATOR</a></li>
+        <li class="nav-item"><a class="nav-link" href="result.html">RESULT</a></li>
+        <li class="nav-item"><a class="nav-link active" href="dashboard.html">DASHBOARD</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">PROFILE PAGE</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">LOGIN / REGISTER</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-content">
+  <div class="container py-5">
+    <h1 class="text-center mb-4"><i class="bi bi-speedometer2"></i> Dashboard</h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title fw-bold mb-3">Welcome, User</h5>
+            <p class="card-text text-muted mb-4">Quick overview of your calculations and summary.</p>
+            <hr class="my-3">
+            
+            <!-- Recent Results Section -->
+            <div class="mb-4">
+              <h6 class="fw-bold mb-3">Recent Calculations</h6>
+              <div id="recentResults" style="display:flex; flex-direction:column; gap:10px">
+                <p class="text-muted">No results yet. <a href="calculator.html">Start calculating</a></p>
+              </div>
+            </div>
+
+            <hr class="my-3">
+
+            <!-- Quick Calculator Section -->
+            <div class="mb-4">
+              <h6 class="fw-bold mb-3">Quick Calculator</h6>
+              <div style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap">
+                <input id="miniPower" type="number" placeholder="kWh" style="flex:1; min-width:120px; padding:8px 12px; border:1px solid rgba(15,23,32,0.06); border-radius:8px">
+                <input id="miniCost" type="number" placeholder="Cost/kWh" style="flex:1; min-width:120px; padding:8px 12px; border:1px solid rgba(15,23,32,0.06); border-radius:8px">
+                <button id="miniCalcBtn" class="btn btn-primary" style="padding:8px 16px">Calculate</button>
+              </div>
+              <div id="miniDisplay" style="padding:12px; background:var(--bg); border-radius:8px; text-align:center; color:var(--muted); font-size:14px">Result will appear here</div>
+            </div>
+
+            <hr class="my-3">
+
+            <!-- Summary Stats Section -->
+            <div>
+              <h6 class="fw-bold mb-3">Summary Stats</h6>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px">
+                <div style="text-align:center; padding:12px; background:var(--bg); border-radius:8px">
+                  <p class="text-muted" style="font-size:13px; margin-bottom:4px">Total Entries</p>
+                  <p class="fw-bold" style="font-size:20px" id="entriesCount">0</p>
+                </div>
+                <div style="text-align:center; padding:12px; background:var(--bg); border-radius:8px">
+                  <p class="text-muted" style="font-size:13px; margin-bottom:4px">Last Bill</p>
+                  <p class="fw-bold" style="font-size:18px">—</p>
+                </div>
+                <div style="text-align:center; padding:12px; background:var(--bg); border-radius:8px">
+                  <p class="text-muted" style="font-size:13px; margin-bottom:4px">Quick Links</p>
+                  <p><a href="result.html" style="color:var(--accent); text-decoration:none; font-weight:600">View All</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
